@@ -66,6 +66,8 @@ export class Home {
   }
 
   getListItems() {
+    console.log("traemos todo");
+    
     this._itemService.getAll().then(res => {
       this.initDataSource = res;
       this.dataSource.data = res;
