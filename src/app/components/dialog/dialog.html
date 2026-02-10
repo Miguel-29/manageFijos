@@ -1,0 +1,110 @@
+<form *ngIf="!data.formCopyPaste" class="form" [formGroup]="form" (ngSubmit)="submit()">
+  <h2 mat-dialog-title>Editar Item</h2>
+  <mat-form-field class="w-100">
+    <mat-label>Nombre</mat-label>
+    <input matInput formControlName="name">
+    <mat-error>
+      Nombre requerido
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="w-100">
+    <mat-label>Ubicación</mat-label>
+
+    <mat-select formControlName="parentid">
+
+      <!-- buscador -->
+      <mat-option>
+        <input (click)="$event.stopPropagation()" matInput placeholder="Buscar..." [(ngModel)]="searchParent"
+          (ngModelChange)="filterParents()" [ngModelOptions]="{standalone: true}" />
+      </mat-option>
+
+      <mat-option *ngIf="form.get('type')?.value == 'contenedor'" [value]="null">
+        Ninguno
+      </mat-option>
+
+      <mat-option *ngFor="let option of filteredParents" [value]="option.id">
+        {{ option.name }}
+      </mat-option>
+
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="w-100">
+    <mat-label>tipo</mat-label>
+    <select matNativeControl formControlName="type">
+      <option *ngFor="let option of listTypes" [ngValue]="option">
+        {{ option }}
+      </option>
+    </select>
+    <mat-error *ngIf="form.get('type')?.hasError('required')">
+      Tipo requerido
+    </mat-error>
+    <mat-error *ngIf="form.get('type')?.hasError('hasChildren')">
+      Este valor ya está asignado
+    </mat-error>
+  </mat-form-field>
+
+
+  <mat-form-field class="w-100">
+    <mat-label>Etiquetas</mat-label>
+    <input matInput formControlName="tags">
+    <mat-error>
+      tags requerido
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="w-100">
+    <mat-label>Descripcion</mat-label>
+    <input matInput formControlName="description">
+    <mat-error>
+      Etiquetas requeridas
+    </mat-error>
+  </mat-form-field>
+  <div class="d-flex justify-content-center">
+    <button class="m-1" mat-dialog-close color="acent" matMiniFab aria-label="Example icon button with a menu icon">
+      <mat-icon>clear</mat-icon>
+    </button>
+    <button [disabled]="loading" class="m-1" type="submit" color="primary" matMiniFab
+      aria-label="Example icon button with a menu icon">
+      <mat-icon>send</mat-icon>
+    </button>
+  </div>
+
+</form>
+
+<form *ngIf="data.formCopyPaste" class="form" [formGroup]="formCopyPaste" (ngSubmit)="submitCopyPaste()">
+  <h2 mat-dialog-title>Mover items a:</h2>
+  <mat-form-field class="w-100">
+    <mat-label>Ubicación</mat-label>
+
+    <mat-select formControlName="parentid">
+
+      <!-- buscador -->
+      <mat-option>
+        <div class="d-flex">
+          
+          <input (click)="$event.stopPropagation()" matInput placeholder="Buscar..." [(ngModel)]="searchParent"
+            (ngModelChange)="filterParents()" [ngModelOptions]="{standalone: true}" />
+        </div>
+        </mat-option>
+
+      <mat-option *ngIf="form.get('type')?.value == 'contenedor'" [value]="null">
+        Ninguno
+      </mat-option>
+
+      <mat-option *ngFor="let option of filteredParents" [value]="option.id">
+        {{ option.name }}
+      </mat-option>
+
+    </mat-select>
+  </mat-form-field>
+  <div class="d-flex justify-content-center">
+    <button class="m-1" mat-dialog-close color="acent" matMiniFab aria-label="Example icon button with a menu icon">
+      <mat-icon>clear</mat-icon>
+    </button>
+    <button [disabled]="loading" class="m-1" type="submit" color="primary" matMiniFab
+      aria-label="Example icon button with a menu icon">
+      <mat-icon>send</mat-icon>
+    </button>
+  </div>
+</form>

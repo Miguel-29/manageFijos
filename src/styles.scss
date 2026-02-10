@@ -1,1 +1,52 @@
+@use '@angular/material' as mat;
 /* You can add global styles to this file, and also import other style files */
+.w-100 {
+    width: 100% !important;
+}
+
+.mdc-dialog__surface{
+    overflow: hidden !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+.justify-content-center {
+    justify-content: center !important;
+}
+
+.justify-content-between {
+    justify-content: space-between !important;
+}
+
+.m-1 {
+    margin: 5px;
+}
+
+.m-2 {
+    margin: 10px;
+}
+
+
+// Customize the entire app. Change :root to your selector if you want to scope the styles.
+.snackbar-success {
+    @include mat.snack-bar-overrides((
+    button-color: white,
+    container-color: #2e7d32,
+  ));
+}
+
+.snackbar-error {
+    @include mat.snack-bar-overrides((
+    button-color: white,
+    container-color: #c62828,
+  ));
+}
+
+.snackbar-warning {
+    @include mat.snack-bar-overrides((
+    button-color: white,
+    container-color: #ed6c02,
+  ));
+}

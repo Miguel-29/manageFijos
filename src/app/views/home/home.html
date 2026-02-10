@@ -1,0 +1,65 @@
+<div class="d-flex">
+  <mat-form-field >
+    <mat-label>Buscar</mat-label>
+    <input matInput (input)="filteredItems($event)">
+  </mat-form-field>
+  <button class="m-2" (click)="editContent($event, newNode, true)" color="primary" matMiniFab aria-label="Example icon button with a menu icon">
+    <mat-icon>add</mat-icon>
+  </button>
+  <button class="m-2" (click)="refreshItems()"  matMiniFab aria-label="Example icon button with a menu icon">
+    <mat-icon>refresh</mat-icon>
+  </button>
+</div>
+<mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree">
+  <!-- This is the tree node template for leaf nodes -->
+  <!-- There is inline padding applied to this node using styles.
+    This padding value depends on the matIconButton width. -->
+  <mat-nested-tree-node class="d-flex justify-content-between" *matTreeNodeDef="let node">    
+    <p [matTooltip]=node.description>
+      {{node.name}}
+    </p>
+    <div class="d-flex">
+      <button class="m-1" (click)="editContent($event, node, false)" color="primary" matMiniFab aria-label="Example icon button with a menu icon">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button class="m-1" (click)="removeItem($event, node)" color="acent" matMiniFab aria-label="Example icon button with a menu icon">
+        <mat-icon>remove</mat-icon>
+      </button>
+    </div>
+  </mat-nested-tree-node>
+  <!-- This is the tree node template for expandable nodes -->
+  <mat-nested-tree-node
+      *matTreeNodeDef="let node; when: hasChild"
+      matTreeNodeToggle [cdkTreeNodeTypeaheadLabel]="node.name">
+    <div class="mat-tree-node d-flex justify-content-between">
+      <div class="d-flex"> 
+        <button matIconButton matTreeNodeToggle
+                [attr.aria-label]="'Toggle ' + node.name">
+          <mat-icon class="mat-icon-rtl-mirror">
+            {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+          </mat-icon>
+        </button>
+        <p [matTooltip]=node.description>
+          {{node.name}}
+        </p>
+      </div>
+      <div class="d-flex">
+        <button class="m-1" (click)="copyContent($event, node)" color="accent" matMiniFab aria-label="Example icon button with a menu icon">
+          <mat-icon>file_copy</mat-icon>
+        </button>
+        <button class="m-1" (click)="editContent($event, node, false)" color="primary" matMiniFab aria-label="Example icon button with a menu icon">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button class="m-1" (click)="removeItem($event, node)" color="acent" matMiniFab aria-label="Example icon button with a menu icon">
+          <mat-icon>remove</mat-icon>
+        </button>
+      </div>
+    </div>
+    <!-- There is inline padding applied to this div using styles.
+        This padding value depends on the matIconButton width.  -->
+    <div [class.example-tree-invisible]="!treeControl.isExpanded(node)"
+        role="group">
+      <ng-container matTreeNodeOutlet></ng-container>
+    </div>
+  </mat-nested-tree-node>
+</mat-tree>
