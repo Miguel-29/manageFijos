@@ -15,6 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { Supabase } from '../../services/supabase';
 import { Messages } from '../../services/messages';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { CacheService } from '../../services/cache.service';
 
 @Component({
   selector: 'app-home',
@@ -34,6 +35,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 })
 
 export class Home {
+  online: boolean = true;
   newNode: item = {
     id: 9999,
     description: "",
@@ -54,7 +56,9 @@ export class Home {
 
   constructor(
     private _itemService: Item,
-    private _Messages: Messages) { }
+    private _Messages: Messages,
+    private _cacheService: CacheService,
+  ) { }
 
   ngOnInit() {
     this._itemService.update$.subscribe(updated => {
@@ -63,15 +67,20 @@ export class Home {
       }
     });
     this.getListItems();
+
+    if(window) {
+      window.addEventListener('online', () => this.online = true);
+      window.addEventListener('offline', () => this.online = false);
+    }
   }
 
-  getListItems() {
-    console.log("traemos todo");
-    
-    this._itemService.getAll().then(res => {
+  async getListItems(notify = false) {    
+    this._cacheService.getAssets().subscribe(res => {
+      console.log("cambio", res);
+      if(notify) this._Messages.openSnackBar("Articulos recargados", "Entendido", "success");
       this.initDataSource = res;
       this.dataSource.data = res;
-    })
+    });
   }
 
   filteredItems(e: any) {
@@ -157,6 +166,6 @@ export class Home {
   refreshItems = () => {
     this.initDataSource = [];
     this.dataSource.data = [];
-    this.getListItems();
+    this.getListItems(true);
   }
 }

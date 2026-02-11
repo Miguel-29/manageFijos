@@ -24,7 +24,5 @@ export class Update {
       this.form.markAllAsTouched();
       return;
     }
-
-    console.log(this.form.value);
   }
 }

@@ -19,8 +19,6 @@ export class Dialog {
   }
 
   confirm(objDialogInto: messageConfirm) {  
-    console.log(objDialogInto);
-      
     return this.dialog.open(DialogConfirm, {
       width: '400px',
       data: objDialogInto,

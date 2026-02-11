@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:manageF": "node dist/manageF/server/server.mjs",
-    "deploy": "ng build --configuration production --base-href /manageFijos/ --deploy-url /manageFijos/ && npx angular-cli-ghpages --dir=dist/managef/browser"
+    "deploys": "ng build --configuration production --base-href /manageFijos/ --deploy-url /manageFijos/ && npx angular-cli-ghpages --dir=dist/managef/browser"
   },
   "prettier": {
     "printWidth": 100,

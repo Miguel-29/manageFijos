@@ -21,8 +21,6 @@ export class Item {
   }
 
   set assetsFromDB(value: item[]) {
-    console.log("cambio", value);
-
     this._assetsFromDB = value;
   }
 
@@ -51,7 +49,6 @@ export class Item {
   private getListParents() {
     this.getParents().then((res: any) => {
       this.listParents = res;
-      console.log(this.listParents);
     });
   }
 
