@@ -1,0 +1,79 @@
+{
+  "configVersion": 1,
+  "timestamp": 1770768798032,
+  "index": "/manageFijos/index.csr.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/manageFijos/favicon.ico",
+        "/manageFijos/index.csr.html",
+        "/manageFijos/index.html",
+        "/manageFijos/main-URNR4VJF.js",
+        "/manageFijos/manifest.webmanifest",
+        "/manageFijos/styles-IWE7SNNK.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/manageFijos/icons/icon-128x128.png",
+        "/manageFijos/icons/icon-144x144.png",
+        "/manageFijos/icons/icon-152x152.png",
+        "/manageFijos/icons/icon-192x192.png",
+        "/manageFijos/icons/icon-384x384.png",
+        "/manageFijos/icons/icon-512x512.png",
+        "/manageFijos/icons/icon-72x72.png",
+        "/manageFijos/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/manageFijos/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
+    "/manageFijos/icons/icon-128x128.png": "f912963bdc6d5a38d8f1dd0afbaab2ce8d657acb",
+    "/manageFijos/icons/icon-144x144.png": "b155fd5f2fd5d2ea7760721063003c4cd95fd783",
+    "/manageFijos/icons/icon-152x152.png": "eae6e0f0c8afb8aaae339e2a569b43e9238e5e6c",
+    "/manageFijos/icons/icon-192x192.png": "15c4180454633880d98674aa7394656196c91584",
+    "/manageFijos/icons/icon-384x384.png": "94a915751ef6c9282df9aea405ad679230631814",
+    "/manageFijos/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
+    "/manageFijos/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
+    "/manageFijos/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
+    "/manageFijos/index.csr.html": "3669c452f8a652113b276331757263dbd588080d",
+    "/manageFijos/index.html": "58b48cc3342b9dce653c4c588e78c1991d15129c",
+    "/manageFijos/main-URNR4VJF.js": "1dc478063ed620c58a1e980490b7a89f3a0637a6",
+    "/manageFijos/manifest.webmanifest": "cdc91b629b4d7bd582d3afa4bad3989a235eae20",
+    "/manageFijos/styles-IWE7SNNK.css": "33c62f9e825e6dd75b6659debcd129e75bfdd769"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}

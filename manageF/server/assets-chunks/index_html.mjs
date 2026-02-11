@@ -1,7 +1,7 @@
-<!DOCTYPE html><html lang="en" data-beasties-container><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+export default `<!DOCTYPE html><html lang="en" data-beasties-container><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <meta charset="utf-8">
   <title>ManageF</title>
-  <base href="/">
+  <base href="/manageFijos/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <style>@font-face{font-family:'Material Icons';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/materialicons/v145/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');}.material-icons{font-family:'Material Icons';font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-feature-settings:'liga';-webkit-font-smoothing:antialiased;}</style>
@@ -20,4 +20,4 @@
   <noscript>Please enable JavaScript to continue using this application.</noscript>
 <script src="main-URNR4VJF.js" type="module"></script>
 
-<div class="cdk-live-announcer-element cdk-visually-hidden" aria-atomic="true" aria-live="polite" id="cdk-live-announcer-0"></div><script id="ng-state" type="application/json">{"__nghData__":[{"t":{"0":"t0","4":"t1","6":"t2","7":"t3","8":"t4","10":"t5","12":"t9","13":"t10","14":"t11","16":"t12","17":"t13"},"c":{"0":[],"4":[{"i":"t1","r":1}],"6":[],"7":[],"8":[],"10":[{"i":"t5","r":3,"t":{"0":"t6"},"c":{"0":[{"i":"t0","r":2,"t":{"0":"t7"},"c":{"0":[{"i":"t7","r":1,"n":{"2":"0fn"},"t":{"2":"t8"},"c":{"2":[]}}]}}]}}],"12":[],"13":[],"14":[{"i":"t11","r":1}],"16":[],"17":[{"i":"t13","r":1,"t":{"1":"t14"},"c":{"1":[]},"n":{"3":"0fn"}}]}},{"n":{"2":"hfn2","5":"hfn3"}},{},{"c":{"0":[]}},{"n":{"2":"1fnfn2fn3f2","4":"1fnfn2fn3fn4","6":"5fn","7":"6f","9":"8fn","10":"9f"},"t":{"12":"t15","13":"t16"},"d":[12,13]},{"c":{"0":[{"i":"c2188467542","r":1}]}}]}</script></body></html>
+<div class="cdk-live-announcer-element cdk-visually-hidden" aria-atomic="true" aria-live="polite" id="cdk-live-announcer-0"></div><script id="ng-state" type="application/json">{"__nghData__":[{"t":{"0":"t0","4":"t1","6":"t2","7":"t3","8":"t4","10":"t5","12":"t9","13":"t10","14":"t11","16":"t12","17":"t13"},"c":{"0":[],"4":[{"i":"t1","r":1}],"6":[],"7":[],"8":[],"10":[{"i":"t5","r":3,"t":{"0":"t6"},"c":{"0":[{"i":"t0","r":2,"t":{"0":"t7"},"c":{"0":[{"i":"t7","r":1,"n":{"2":"0fn"},"t":{"2":"t8"},"c":{"2":[]}}]}}]}}],"12":[],"13":[],"14":[{"i":"t11","r":1}],"16":[],"17":[{"i":"t13","r":1,"t":{"1":"t14"},"c":{"1":[]},"n":{"3":"0fn"}}]}},{"n":{"2":"hfn2","5":"hfn3"}},{},{"c":{"0":[]}},{"n":{"2":"1fnfn2fn3f2","4":"1fnfn2fn3fn4","6":"5fn","7":"6f","9":"8fn","10":"9f"},"t":{"12":"t15","13":"t16"},"d":[12,13]},{"c":{"0":[{"i":"c2188467542","r":1}]}}]}</script></body></html>`;
