@@ -15,9 +15,23 @@
   <!-- There is inline padding applied to this node using styles.
     This padding value depends on the matIconButton width. -->
   <mat-nested-tree-node class="d-flex justify-content-between" *matTreeNodeDef="let node">    
-    <p [matTooltip]=node.description>
-      {{node.name}}
-    </p>
+    <div class="d-flex" *ngIf="node.type == 'contenedor'">
+      
+      <button (click)="$event.stopPropagation()" matIconButton color="acent">
+        <mat-icon class="mat-icon-rtl-mirror">
+          highlight_off
+        </mat-icon>
+      </button>
+      <p class="text-bold" [matTooltip]=node.description>
+        {{node.name}}a
+      </p>
+
+    </div>
+    <ng-container *ngIf="node.type !== 'contenedor'">
+      <p class="ml-48" [matTooltip]=node.description>
+        {{node.name}}a
+      </p>
+    </ng-container>
     <div class="d-flex">
       <button class="m-1" (click)="editContent($event, node, false)" color="primary" matMiniFab aria-label="Example icon button with a menu icon">
         <mat-icon>edit</mat-icon>
@@ -33,13 +47,13 @@
       matTreeNodeToggle [cdkTreeNodeTypeaheadLabel]="node.name">
     <div class="mat-tree-node d-flex justify-content-between">
       <div class="d-flex"> 
-        <button matIconButton matTreeNodeToggle
+        <button matIconButton matTreeNodeToggle color="acent"
                 [attr.aria-label]="'Toggle ' + node.name">
           <mat-icon class="mat-icon-rtl-mirror">
             {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
           </mat-icon>
         </button>
-        <p [matTooltip]=node.description>
+        <p class="text-bold" [matTooltip]=node.description>
           {{node.name}}
         </p>
       </div>

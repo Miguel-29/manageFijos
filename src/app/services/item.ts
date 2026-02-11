@@ -192,7 +192,6 @@ export class Item {
 
   async runQuery(query: any) {
     try {
-      debugger
       const { data, error } = await query;
 
       if (error) {
