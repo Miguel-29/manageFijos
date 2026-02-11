@@ -1,7 +1,7 @@
 {
   "configVersion": 1,
-  "timestamp": 1770772285911,
-  "index": "/manageFijos/index.csr.html",
+  "timestamp": 1770776432345,
+  "index": "/manageFijos/index.html",
   "assetGroups": [
     {
       "name": "app",
@@ -12,9 +12,8 @@
       },
       "urls": [
         "/manageFijos/favicon.ico",
-        "/manageFijos/index.csr.html",
         "/manageFijos/index.html",
-        "/manageFijos/main-NQF7NNIS.js",
+        "/manageFijos/main-47TGRNB7.js",
         "/manageFijos/manifest.webmanifest",
         "/manageFijos/styles-HHTEOE3P.css"
       ],
@@ -51,9 +50,8 @@
     "/manageFijos/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
     "/manageFijos/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
     "/manageFijos/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
-    "/manageFijos/index.csr.html": "10563c988e1290034692ce3d1315192db285e437",
-    "/manageFijos/index.html": "9790c1d5fdc3c62cfb839b11ac01ebd3363f9ff8",
-    "/manageFijos/main-NQF7NNIS.js": "b7dc73bc9a0e796728a673661a6d06b0c3f0cf4f",
+    "/manageFijos/index.html": "14c2acbcf3d96351251a553d1234721871190ee3",
+    "/manageFijos/main-47TGRNB7.js": "d0f9d26aa81f3944140970a760959d15bf253a0c",
     "/manageFijos/manifest.webmanifest": "cdc91b629b4d7bd582d3afa4bad3989a235eae20",
     "/manageFijos/styles-HHTEOE3P.css": "c45d568bfbad93a8aca05c19e62dddaf32a7d2d0"
   },
