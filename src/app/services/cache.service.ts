@@ -13,10 +13,11 @@ export class CacheService {
     private _itemService: Item
   ) {}
 
-  getAssets(): Observable<item[]> {
+  getAssets(takeCache: boolean = true): Observable<item[]> {
+    debugger
     let data = this.getCache() || this.getLocalStorage();
 
-    if (data) return of(data);
+    if (data && takeCache) return of(data);
 
     return from(this._itemService.getAll()).pipe(
       tap(res => {

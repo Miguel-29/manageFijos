@@ -46,14 +46,15 @@ export class Item {
     });
   }
 
-  private getListParents() {
-    this.getParents().then((res: any) => {
+  private getListParents() {    
+    this.getParents().then((res: item[]) => {
+      res.sort((a, b) => a.name.localeCompare(b.name))
       this.listParents = res;
     });
   }
 
   private async getParents() {
-    const { data, error } = await this.supabase.from('assets').select('*').eq('type', 'contenedor');
+    const { data, error } = await this.supabase.from('assets').select('*').eq('type', 'contenedor').eq('stateactive', true);
 
     if (error) {
       console.error('Error cargando padres', error);

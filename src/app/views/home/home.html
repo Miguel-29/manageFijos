@@ -23,13 +23,13 @@
         </mat-icon>
       </button>
       <p class="text-bold" [matTooltip]=node.description>
-        {{node.name}}a
+        {{node.name}}
       </p>
 
     </div>
     <ng-container *ngIf="node.type !== 'contenedor'">
       <p class="ml-48" [matTooltip]=node.description>
-        {{node.name}}a
+        {{node.name}}
       </p>
     </ng-container>
     <div class="d-flex">
@@ -79,4 +79,4 @@
 </mat-tree>
 
 {{!online ? '● Offline — los datos se sincronizarán automáticamente' : null}}
-version: 10022107
+version: 14022107

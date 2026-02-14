@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatInputModule } from '@angular/material/input';
@@ -58,15 +58,18 @@ export class Home {
     private _itemService: Item,
     private _Messages: Messages,
     private _cacheService: CacheService,
+    private cdr: ChangeDetectorRef,
   ) { }
 
-  ngOnInit() {
+  ngOnInit() {    
     this._itemService.update$.subscribe(updated => {
+      debugger
       if (updated) {
-        this.getListItems();
+        this.getListItems({refresDataBD: true});
       }
     });
-    this.getListItems();
+
+    this.getListItems({});
 
     if(window) {
       window.addEventListener('online', () => this.online = true);
@@ -74,12 +77,27 @@ export class Home {
     }
   }
 
-  async getListItems(notify = false) {    
-    this._cacheService.getAssets().subscribe(res => {
-      console.log("cambio", res);
-      if(notify) this._Messages.openSnackBar("Articulos recargados", "Entendido", "success");
+  ngAfterViewInit() {
+    
+  }
+
+  async getListItems(params: {notify?: boolean, refresDataBD?: boolean}) {
+    debugger
+    console.log("param", params);
+    
+    this._cacheService.getAssets(!params.refresDataBD).subscribe(res => {
+      debugger
+      console.log("vamos");
+      
+      if(params.notify) this._Messages.openSnackBar("Articulos recargados", "Entendido", "success");
       this.initDataSource = res;
-      this.dataSource.data = res;
+      const newDataSource = new MatTreeNestedDataSource<item>();
+      newDataSource.data = res;
+      this.dataSource = newDataSource;
+      console.log("llegamos");
+      
+
+      this.cdr.detectChanges();
     });
   }
 
@@ -166,6 +184,6 @@ export class Home {
   refreshItems = () => {
     this.initDataSource = [];
     this.dataSource.data = [];
-    this.getListItems(true);
+    this.getListItems({notify: true});
   }
 }
